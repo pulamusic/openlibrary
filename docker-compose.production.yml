@@ -127,7 +127,9 @@ services:
       - ssl_certificate_key
 
   infobase_nginx:
-    image: nginx:1.19.4
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.nginx
     restart: always
     depends_on:
       - infobase
